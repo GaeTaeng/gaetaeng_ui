@@ -13,4 +13,6 @@
   /* justify-content: center; */
   font-size: calc(10px + 2vmin);
   color: black;
+
+  box-shadow : 2px 1px 4px -1px rgba(0,0,0,0.2)
 }

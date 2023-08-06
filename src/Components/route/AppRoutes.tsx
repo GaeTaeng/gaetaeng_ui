@@ -8,7 +8,7 @@ function AppRoutes() {
     return (
         <Routes>
             <Route path="/">
-
+                <Route path="" element={<div>MAIN</div>} />
                 <Route path="todo" element={<Todo />} />
             </Route>
         </Routes>
