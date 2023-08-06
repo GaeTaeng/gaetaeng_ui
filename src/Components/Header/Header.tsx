@@ -15,9 +15,11 @@ import Menu from '@mui/material/Menu';
 import './Header.css'
 import ListSnbMenu from './ListSnbMenu';
 import LoginIcon from '@mui/icons-material/Login';
+import { LI_MENU } from './HEADER_ENUM';
 export default function Header() {
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setAuth(event.target.checked);
@@ -61,7 +63,7 @@ export default function Header() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Photos
+            {LI_MENU[selectedIndex].name}
           </Typography>
           <div>
             <IconButton
@@ -98,7 +100,7 @@ export default function Header() {
       </AppBar>
 
 
-      <ListSnbMenu />
+      <ListSnbMenu selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex}/>
     </Box>
   );
 }

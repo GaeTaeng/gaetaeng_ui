@@ -7,23 +7,16 @@ import ListSubheader from '@mui/material/ListSubheader';
 import * as React from 'react';
 import PersonIcon from '@mui/icons-material/Person';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import { LI_MENU } from './HEADER_ENUM';
 
-export default function ListSnbMenu() {
-    const LI_MENU = [
-        {
-            name : "Profile",
-            url : "/profile",
-            icon : <PersonIcon />
-        },
-        {
-            name : "TODO",
-            url : "/todo",
-            icon : <CalendarMonthIcon />
-        }
-    ]
+type Props = {
+  selectedIndex : number;
+  setSelectedIndex : any;
+}
+export default function ListSnbMenu({selectedIndex, setSelectedIndex} : Props) {
+
 
   const [open, setOpen] = React.useState(true);
-  const [selectedIndex, setSelectedIndex] = React.useState(0);
 
   const handleClick = () => {
     setOpen(!open);
