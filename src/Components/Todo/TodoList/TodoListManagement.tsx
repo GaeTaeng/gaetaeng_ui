@@ -7,7 +7,7 @@ function TodoListManagement({li_todo} : Props_li_todo) {
         <div className="">
             {
                 li_todo?.map((item, idx) => {
-                    return <TodoItem key={`item_${idx}`} />;
+                    return <TodoItem {...item}/>;
                 })
             }
             

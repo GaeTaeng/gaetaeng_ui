@@ -9,6 +9,7 @@ function AppRoutes() {
         <Routes>
             <Route path="/">
                 <Route path="" element={<div>MAIN</div>} />
+                <Route path="profile" element={<div>profile</div>} />
                 <Route path="todo" element={<Todo />} />
             </Route>
         </Routes>

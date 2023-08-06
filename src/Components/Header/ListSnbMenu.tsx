@@ -1,12 +1,10 @@
-import SendIcon from '@mui/icons-material/Send';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import ListSubheader from '@mui/material/ListSubheader';
 import * as React from 'react';
-import PersonIcon from '@mui/icons-material/Person';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import { useNavigate } from 'react-router';
 import { LI_MENU } from './HEADER_ENUM';
 
 type Props = {
@@ -16,6 +14,7 @@ type Props = {
 export default function ListSnbMenu({selectedIndex, setSelectedIndex} : Props) {
 
 
+  const navigate = useNavigate();
   const [open, setOpen] = React.useState(true);
 
   const handleClick = () => {
@@ -27,6 +26,13 @@ export default function ListSnbMenu({selectedIndex, setSelectedIndex} : Props) {
     index: number,
   ) => {
     setSelectedIndex(index);
+
+    navigate(LI_MENU[index].url, {
+      state: {
+        mn_idx: index
+      }
+    });
+    
   };
   return (
     <List
