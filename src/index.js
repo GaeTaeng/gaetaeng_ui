@@ -4,7 +4,7 @@ import { RecoilRoot } from 'recoil';
 import ReactDOM from 'react-dom';
 import App from './Components/App';
 import reportWebVitals from './reportWebVitals';
-
+import './index.css'
 
 ReactDOM.render(
   <StrictMode>
