@@ -1,0 +1,16 @@
+
+.TOP-header {
+    height: 30px;
+  }
+
+.SNB-header {
+    
+  background-color: white;
+  min-height: 100vh;
+  float: left;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: center; */
+  font-size: calc(10px + 2vmin);
+  color: black;
+}
