@@ -1,0 +1,64 @@
+.Todo {
+    
+    width: 600px;
+}
+
+.Todo-List-Contents {
+    border: 1px solid black;
+    padding: 10px 0px;
+    width: 600px;
+    min-height: 300px;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 1vmin);
+    
+}
+
+
+.Todo_Item {
+    margin: 1px auto;
+    border: 1px solid black;
+    
+    width: 550px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    
+}
+.Todo_Item:hover {
+    background-color:#199ae6 ;
+    border: 1px solid #2477a8;
+    
+}
+
+
+.Todo_Input {
+    width: 100%;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid black;
+    padding: 0 4px;
+}
+
+.Todo_Input input {
+    flex: 1;
+    outline: none;
+    border: none;
+    color: black;
+    background-color: white;
+    padding: 5px 2px;
+    font-size: 1.2rem;
+
+}
+.Todo_Input input::placeholder {
+    color: black;
+
+}
+
+.TodoInput-Button {
+    color: black;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
