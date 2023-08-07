@@ -6,6 +6,13 @@ import { useRecoilState } from 'recoil';
 import { TodoSqeuenceState, TodoState } from '../../States/TodoState';
 import dayjs from 'dayjs';
 
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { width } from '@mui/system';
+
+import TextField from '@mui/material/TextField';
 type Props = { 
     handleAddTodoItem : any;
   }
@@ -15,7 +22,7 @@ function TodoInput() {
 
     const [title, setTitle] = useState<string>('');
     const [contents, setContents] = useState<string>('');
-    const [deadline, setDeadLine] = useState<Date>(new Date());
+    const [deadline, setDeadLine] = useState<Date | null>(new Date());
 
 
 
@@ -31,12 +38,25 @@ function TodoInput() {
 
 
     const addTodo = () => {
+        if(!deadline) return;
         handleAddTodoItem({id : todoSequence,title : title, contents : contents, deadline : deadline, is_complete : false})
         setTitle('')
         setContents('')
         setTodoSequence(todoSequence+1)
     }
+    const handleOnKeyUp = (event : React.KeyboardEvent<HTMLInputElement>) => {
+        if(event.key === 'Enter') {
+            addTodo();
+        }   
 
+    }
+    const handleChangeTodoDate = (value: dayjs.Dayjs) => {
+        if(!value.isValid()) {
+            setDeadLine(null)
+        }else {
+            setDeadLine(value.toDate())
+        }
+    }
     const handleChangeTodoTitle = (event : React.ChangeEvent<HTMLInputElement>) => {
         setTitle(event.target.value)
     }
@@ -45,23 +65,31 @@ function TodoInput() {
     }
     return (
         <div className="Todo_Input">
-            <input
-                type='text'
-                className='TodoInput-Input'
-                placeholder='제목을 입력해보세요!'
-                value={title}
-                onChange={handleChangeTodoTitle}
+        <DemoContainer components={['DatePicker']}> 
+            <DatePicker 
+            label="기한"  
+            sx={{width : "200px"}}
+            defaultValue={dayjs(deadline)} onChange={handleChangeTodoDate} 
+            format='YYYY/MM/DD'
             />
-            <FaPen className='TodoInput-Button' onClick={addTodo} />
             
-            <input
-                type='text'
-                className='TodoInput-Input'
-                placeholder='내용을 입력해보세요!'
+
+            <TextField className='TodoInput-Input-Title'
+                sx={{width : "30%"}}
+                value={title}
+                id="outlined-helperText"
+                label="제목" 
+                onChange={handleChangeTodoTitle}
+                onKeyUp={handleOnKeyUp} />
+            <TextField className='TodoInput-Input-Contents'
+                sx={{width : "30%"}}
                 value={contents}
-                onChange={handleChangeTodoContents}
-            />
-            <FaPen className='TodoInput-Button' onClick={addTodo} />
+                id="outlined-helperText"
+                    label="내용" 
+                    onChange={handleChangeTodoContents}
+                    onKeyUp={handleOnKeyUp} />
+                    <FaPen className='TodoInput-Button' onClick={addTodo} />
+      </DemoContainer>
         </div>
     )
 }

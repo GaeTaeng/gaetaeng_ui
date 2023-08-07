@@ -1,13 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { Props_li_todo } from '../TodoType';
 import TodoItem from './TodoItem';
-import { Props_li_todo, Props_todo_item } from '../TodoType';
 
 import Divider from '@mui/material/Divider';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 
 import { styled } from '@mui/material/styles';
-import dayjs from 'dayjs';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -24,10 +23,10 @@ function TodoListManagement({li_todo} : Props_li_todo) {
     return (
         <div className="">
         <Stack direction="row" spacing={2}
-        divider={<Divider orientation="vertical" flexItem />}>
+            divider={<Divider orientation="vertical" flexItem />}>
             {
                 li_todo?.map((item, idx) => {
-                    return <Item> <TodoItem {...item}/> </Item>;
+                    return <Item key={`todo_item_${idx}`}> <TodoItem {...item}/> </Item>;
                 })
             }
             

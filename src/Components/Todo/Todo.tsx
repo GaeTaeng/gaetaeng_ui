@@ -16,9 +16,13 @@ type Props = {
 function Todo ({width, height}: Props) {
     const [li_todo, setLiTodo] = useRecoilState<Props_todo_item[]>(TodoState);
     
+    const handleReset = () => {
+        setLiTodo([]);
+    }
+
     return(
     <div className="Todo"> 
-      
+        <button onClick={handleReset}> 초기화 </button>
         <TodoListContents li_todo={li_todo} />
         <TodoInput/>
     </div>

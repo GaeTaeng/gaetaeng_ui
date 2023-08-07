@@ -39,12 +39,9 @@
 
 .Todo_Input {
     width: 100%;
-    display: flex;
-    display: -webkit-flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid black;
     padding: 0 4px;
+    white-space: nowrap;
+    
 }
 
 .Todo_Input input {
@@ -56,13 +53,8 @@
     padding: 5px 2px;
     font-size: 1.2rem;
 
-}
-.Todo_Input input::placeholder {
-    color: black;
+    margin : 5px;
 
-}
-
-.Todo_Input_Block {
 }
 .TodoInput-Button {
     color: black;

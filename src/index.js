@@ -4,14 +4,20 @@ import { RecoilRoot } from 'recoil';
 import ReactDOM from 'react-dom';
 import App from './Components/App';
 import reportWebVitals from './reportWebVitals';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+
+
 import './index.css'
 
 ReactDOM.render(
   <StrictMode>
       <RecoilRoot> {/* RecoilRoot provider를 이용하여 recoil을 사용가능하도록 설정해줍니다. */}
-        <Router>
-          <App />
-        </Router>
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <Router>
+            <App />
+          </Router>
+        </LocalizationProvider>
       </RecoilRoot>
     </StrictMode>,
   document.getElementById('root')

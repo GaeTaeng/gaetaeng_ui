@@ -37,7 +37,7 @@ export default function ListSnbMenu({selectedIndex, setSelectedIndex} : Props) {
   return (
     <List
     className='SNB-header'
-      sx={{ width: 325, maxWidth: 325, bgcolor: 'background.paper' }}
+      sx={{ width: "30%", minWidth: 200, maxWidth: 325, bgcolor: 'background.paper' }}
       component="nav"
       aria-labelledby="nested-list-subheader"
       subheader={
@@ -54,6 +54,7 @@ export default function ListSnbMenu({selectedIndex, setSelectedIndex} : Props) {
                             key={`menu_${idx}`}
                             selected={selectedIndex === idx}
                             onClick={(event) => handleListItemClick(event, idx)}
+                            sx={{ width: "100%", minWidth: 200, maxWidth: 325, bgcolor: 'background.paper' }}
                         >
                             <ListItemIcon>
                                 {item.icon}

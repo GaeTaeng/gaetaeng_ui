@@ -1,10 +1,10 @@
 import React from 'react'
 
 
-function Profile() {
+export default function Profile() {
     return (
         <div>
-            
+            profile
         </div>
     )
 }
