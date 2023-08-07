@@ -1,0 +1,7 @@
+.SkillStackList {
+    
+  left: 326px;
+  width: calc(100vw - 406px);
+  display: inline-block;
+  margin : 7px;
+}
