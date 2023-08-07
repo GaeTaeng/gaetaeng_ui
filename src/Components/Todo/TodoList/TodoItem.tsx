@@ -13,9 +13,19 @@ import { TodoState } from '../../../States/TodoState';
 import dayjs from 'dayjs';
 
 
-function TodoItem({id,title, contents, deadline} :Props_todo_item ) {
+function TodoItem({id,title, contents, deadline, is_complete} :Props_todo_item ) {
     const [li_todo, setLiTodo] = useRecoilState(TodoState);
 
+    const handleToggleComplete = () => {
+        const newList = li_todo.map(todo => {
+            if(todo.id === id) {
+                return {...todo, is_complete : !todo.is_complete}
+            }
+
+            return todo;
+        })
+        setLiTodo(newList);
+    }
     const handleUpdateTodoItem = (event: React.MouseEvent<HTMLElement>) => {
         const newList = li_todo.map(todo => {
             if(todo.id === id) {
@@ -50,7 +60,7 @@ function TodoItem({id,title, contents, deadline} :Props_todo_item ) {
             </Typography>
             </CardContent>
             <CardActions>
-            <Button size="small">완료</Button>
+            <Button size="small" onClick={handleToggleComplete}>{is_complete ? "진행 중" : "완료"}</Button>
             <Button size="small">수정</Button>
             <Button size="small" onClick={handleDeleteTodoItem}>삭제</Button>
             </CardActions>

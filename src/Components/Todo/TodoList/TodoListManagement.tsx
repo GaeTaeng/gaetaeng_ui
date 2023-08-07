@@ -20,10 +20,6 @@ const Item = styled(Paper)(({ theme }) => ({
 
 function TodoListManagement({li_todo} : Props_li_todo) {
 
-    function compareNumbers(a : Props_todo_item, b : Props_todo_item){
-        return dayjs(a.deadline).diff(b.deadline);
-      }
-
 
     return (
         <div className="">
