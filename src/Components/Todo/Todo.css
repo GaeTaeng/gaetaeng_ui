@@ -4,25 +4,16 @@
 }
 
 .Todo-List-Contents {
-    border: 1px solid black;
-    padding: 10px 0px;
-    width: 600px;
-    min-height: 300px;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 1vmin);
+
+    overflow: hidden;
     
 }
 
 
 .Todo_Item {
-    margin: 1px auto;
-    border: 1px solid black;
+    width: 275px;
     
-    width: 550px;
-    height: 30px;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
     
 }
 .Todo_Item:hover {

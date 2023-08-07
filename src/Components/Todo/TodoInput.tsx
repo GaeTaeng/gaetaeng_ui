@@ -8,12 +8,18 @@ type Props = {
   }
 function TodoInput({handleAddTodoItem}:Props) {
     const [item, setItem] = useState<Props_todo_item>()
+
+    const [title, setTitle] = useState<string>('');
     const [contents, setContents] = useState<string>('');
     const addTodo = () => {
-        handleAddTodoItem({contents : contents})
+        handleAddTodoItem({title : title, contents : contents})
+        setTitle('')
         setContents('')
     }
 
+    const handleChangeTodoTitle = (event : React.ChangeEvent<HTMLInputElement>) => {
+        setTitle(event.target.value)
+    }
     const handleChangeTodoContents = (event : React.ChangeEvent<HTMLInputElement>) => {
         setContents(event.target.value)
     }
@@ -22,7 +28,16 @@ function TodoInput({handleAddTodoItem}:Props) {
             <input
                 type='text'
                 className='TodoInput-Input'
-                placeholder='Todo를 입력해보세요!'
+                placeholder='제목을 입력해보세요!'
+                value={title}
+                onChange={handleChangeTodoTitle}
+            />
+            <FaPen className='TodoInput-Button' onClick={addTodo} />
+            
+            <input
+                type='text'
+                className='TodoInput-Input'
+                placeholder='내용을 입력해보세요!'
                 value={contents}
                 onChange={handleChangeTodoContents}
             />

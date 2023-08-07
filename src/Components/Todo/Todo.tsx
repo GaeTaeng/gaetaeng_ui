@@ -21,7 +21,8 @@ function Todo ({width, height}: Props) {
       };
     return(
     <div className="Todo">
-        <TodoListContents li_todo={li_todo}/>
+      Recoil 공부목적
+        <TodoListContents li_todo={li_todo} />
         <TodoInput handleAddTodoItem={handleAddTodoItem}/>
     </div>
 )}

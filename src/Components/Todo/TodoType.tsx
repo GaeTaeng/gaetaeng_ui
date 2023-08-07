@@ -9,5 +9,7 @@ export type Props_li_todo = {
 // }
 
   export type Props_todo_item = {
+    title : string;
     contents : string;
+    is_complete : boolean;
 }
