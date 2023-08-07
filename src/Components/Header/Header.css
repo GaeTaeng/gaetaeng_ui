@@ -5,8 +5,10 @@
 
 .SNB-header {
     
+  position: absolute;
   background-color: white;
   min-height:calc(100vh - 112px);
+  width: 325px;
   float: left;
   flex-direction: column;
   /* align-items: center; */

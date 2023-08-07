@@ -37,11 +37,13 @@ export default function ListSnbMenu({selectedIndex, setSelectedIndex} : Props) {
   return (
     <List
     className='SNB-header'
-      sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
+      sx={{ width: 325, maxWidth: 325, bgcolor: 'background.paper' }}
       component="nav"
       aria-labelledby="nested-list-subheader"
       subheader={
-        <ListSubheader component="div" id="nested-list-subheader">
+        <ListSubheader 
+        sx={{ height : 61}}
+        component="div" id="nested-list-subheader">
           Menu
         </ListSubheader>
       }

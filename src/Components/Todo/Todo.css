@@ -1,10 +1,10 @@
 .Todo {
     
-    width: 600px;
 }
 
 .Todo-List-Contents {
 
+    width: 100%;
     overflow: auto;
     
 }
@@ -48,8 +48,10 @@
 
 }
 
+.Todo_Input_Block {
+}
 .TodoInput-Button {
     color: black;
     font-size: 1.4rem;
-    cursor: pointer;
+    cursor: pointer; 
 }
