@@ -16,14 +16,11 @@ type Props = {
 function Todo ({width, height}: Props) {
     const [li_todo, setLiTodo] = useRecoilState<Props_todo_item[]>(TodoState);
 
-    const handleAddTodoItem = (item:Props_todo_item) => {
-        setLiTodo([...li_todo, item])
-      };
     return(
     <div className="Todo">
       Recoil 공부목적
         <TodoListContents li_todo={li_todo} />
-        <TodoInput handleAddTodoItem={handleAddTodoItem}/>
+        <TodoInput/>
     </div>
 )}
 

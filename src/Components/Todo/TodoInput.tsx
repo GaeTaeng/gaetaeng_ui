@@ -2,19 +2,32 @@
 import { FaPen } from 'react-icons/fa';
 import React, { useState } from 'react'
 import { Props_todo_item } from './TodoType';
+import { useRecoilState } from 'recoil';
+import { TodoSqeuenceState, TodoState } from '../../States/TodoState';
 
 type Props = { 
     handleAddTodoItem : any;
   }
-function TodoInput({handleAddTodoItem}:Props) {
-    const [item, setItem] = useState<Props_todo_item>()
+function TodoInput() {
+    const [li_todo, setLiTodo] = useRecoilState<Props_todo_item[]>(TodoState);
+    const [todoSequence, setTodoSequence] = useRecoilState<number>(TodoSqeuenceState);
 
     const [title, setTitle] = useState<string>('');
     const [contents, setContents] = useState<string>('');
+    const [deadline, setDeadLine] = useState<Date>(new Date());
+
+
+
+    const handleAddTodoItem = (item:Props_todo_item) => {
+        setLiTodo([...li_todo, item])
+      };
+
+
     const addTodo = () => {
-        handleAddTodoItem({title : title, contents : contents})
+        handleAddTodoItem({id : todoSequence,title : title, contents : contents, deadline : deadline, is_complete : false})
         setTitle('')
         setContents('')
+        setTodoSequence(todoSequence+1)
     }
 
     const handleChangeTodoTitle = (event : React.ChangeEvent<HTMLInputElement>) => {

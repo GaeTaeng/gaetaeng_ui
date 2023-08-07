@@ -10,11 +10,16 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useRecoilState } from 'recoil';
 import { TodoState } from '../../../States/TodoState';
+import dayjs from 'dayjs';
 
 
-function TodoItem({title, contents} :Props_todo_item ) {
+function TodoItem({id,title, contents, deadline} :Props_todo_item ) {
     const [li_todo, setLiTodo] = useRecoilState(TodoState);
 
+    const handleDeleteTodoItem = (event: React.MouseEvent<HTMLElement>) => {
+        const newList = li_todo.filter(todo => todo.id && todo.id !== id)
+        setLiTodo(newList);
+    }
     return (
         <Box sx={{ minWidth: 275, maxWidth : 275 }}
         className="Todo_Item"
@@ -22,22 +27,22 @@ function TodoItem({title, contents} :Props_todo_item ) {
         <Card variant="outlined">
           <CardContent>
             <Typography sx={{ fontSize: 14, height: 21 }} color="text.secondary" gutterBottom>
-                Word of the Day
+                할일
             </Typography>
             <Typography sx={{ height: 30 }} variant="h5" component="div">
                 {title}
             </Typography>
             <Typography sx={{ height: 24, mb: 1.5 }} color="text.secondary">
-                adjective
+                {contents} 
             </Typography>
             <Typography sx={{ height: 25 }} variant="body2">
-               {contents}
+               {deadline && `~${dayjs(deadline).format("YYYY.MM.DD")}`}
             </Typography>
             </CardContent>
             <CardActions>
             <Button size="small">완료</Button>
             <Button size="small">수정</Button>
-            <Button size="small">삭제</Button>
+            <Button size="small" onClick={handleDeleteTodoItem}>삭제</Button>
             </CardActions>
             </Card>
         </Box>
