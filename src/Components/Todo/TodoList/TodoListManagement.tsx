@@ -1,12 +1,13 @@
 import React from 'react'
 import TodoItem from './TodoItem';
-import { Props_li_todo } from '../TodoType';
+import { Props_li_todo, Props_todo_item } from '../TodoType';
 
 import Divider from '@mui/material/Divider';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 
 import { styled } from '@mui/material/styles';
+import dayjs from 'dayjs';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -18,6 +19,12 @@ const Item = styled(Paper)(({ theme }) => ({
 
 
 function TodoListManagement({li_todo} : Props_li_todo) {
+
+    function compareNumbers(a : Props_todo_item, b : Props_todo_item){
+        return dayjs(a.deadline).diff(b.deadline);
+      }
+
+
     return (
         <div className="">
         <Stack direction="row" spacing={2}

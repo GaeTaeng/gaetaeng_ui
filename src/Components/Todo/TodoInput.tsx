@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { Props_todo_item } from './TodoType';
 import { useRecoilState } from 'recoil';
 import { TodoSqeuenceState, TodoState } from '../../States/TodoState';
+import dayjs from 'dayjs';
 
 type Props = { 
     handleAddTodoItem : any;
@@ -19,7 +20,13 @@ function TodoInput() {
 
 
     const handleAddTodoItem = (item:Props_todo_item) => {
-        setLiTodo([...li_todo, item])
+
+        function compareNumbers(a : Props_todo_item, b : Props_todo_item){
+            return dayjs(a.deadline).diff(b.deadline);
+        }
+
+
+        setLiTodo([...li_todo, item].sort(compareNumbers))
       };
 
 

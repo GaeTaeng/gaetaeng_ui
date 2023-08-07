@@ -16,6 +16,16 @@ import dayjs from 'dayjs';
 function TodoItem({id,title, contents, deadline} :Props_todo_item ) {
     const [li_todo, setLiTodo] = useRecoilState(TodoState);
 
+    const handleUpdateTodoItem = (event: React.MouseEvent<HTMLElement>) => {
+        const newList = li_todo.map(todo => {
+            if(todo.id === id) {
+
+            }
+
+            return todo;
+        })
+        setLiTodo(newList);
+    }
     const handleDeleteTodoItem = (event: React.MouseEvent<HTMLElement>) => {
         const newList = li_todo.filter(todo => todo.id && todo.id !== id)
         setLiTodo(newList);
