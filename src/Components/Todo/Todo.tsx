@@ -15,10 +15,10 @@ type Props = {
   
 function Todo ({width, height}: Props) {
     const [li_todo, setLiTodo] = useRecoilState<Props_todo_item[]>(TodoState);
-
+    
     return(
-    <div className="Todo">
-      Recoil 공부목적
+    <div className="Todo"> 
+      
         <TodoListContents li_todo={li_todo} />
         <TodoInput/>
     </div>
