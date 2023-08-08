@@ -84,6 +84,7 @@ function TodoInput() {
                     onChange={handleChangeTodoContents}
                     onKeyUp={handleOnKeyUp} />
                     <FaPen className='TodoInput-Button' onClick={addTodo} />
+                    {/* #495d88 */}
       </DemoContainer>
         </div>
     )

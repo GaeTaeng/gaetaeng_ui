@@ -13,7 +13,7 @@ function AppRoutes() {
                 <Route path="todo" element={<Todo />} />
                 <Route
                     path="*"
-                    element={<Navigate to="/todo" replace />}
+                    element={<Navigate to="/profile" replace />}
                 />
             </Route>
         </Routes>
