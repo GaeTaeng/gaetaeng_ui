@@ -26,16 +26,6 @@ function TodoItem({id,title, contents, deadline, is_complete} :Props_todo_item )
         })
         setLiTodo(newList);
     }
-    const handleUpdateTodoItem = (event: React.MouseEvent<HTMLElement>) => {
-        const newList = li_todo.map(todo => {
-            if(todo.id === id) {
-
-            }
-
-            return todo;
-        })
-        setLiTodo(newList);
-    }
     const handleDeleteTodoItem = (event: React.MouseEvent<HTMLElement>) => {
         const newList = li_todo.filter(todo => todo.id && todo.id !== id)
         setLiTodo(newList);

@@ -66,7 +66,7 @@ export default function Header() {
           label={auth ? 'Logout' : 'Login'}
         />
       </FormGroup>
-      <AppBar position="static">
+      <AppBar position="static" sx={{backgroundColor : "RGB(0, 66, 0)"}}>
         <Toolbar>
           <IconButton
             size="large"

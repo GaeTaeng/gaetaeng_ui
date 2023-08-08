@@ -1,21 +1,16 @@
 
+import dayjs from 'dayjs';
+import React, { useState } from 'react';
 import { FaPen } from 'react-icons/fa';
-import React, { useState } from 'react'
-import { Props_todo_item } from './TodoType';
 import { useRecoilState } from 'recoil';
 import { TodoSqeuenceState, TodoState } from '../../States/TodoState';
-import dayjs from 'dayjs';
+import { Props_todo_item } from './TodoType';
 
-import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { width } from '@mui/system';
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 
 import TextField from '@mui/material/TextField';
-type Props = { 
-    handleAddTodoItem : any;
-  }
+
 function TodoInput() {
     const [li_todo, setLiTodo] = useRecoilState<Props_todo_item[]>(TodoState);
     const [todoSequence, setTodoSequence] = useRecoilState<number>(TodoSqeuenceState);

@@ -15,12 +15,6 @@ export default function ListSnbMenu({selectedIndex, setSelectedIndex} : Props) {
 
 
   const navigate = useNavigate();
-  const [open, setOpen] = React.useState(true);
-
-  const handleClick = () => {
-    setOpen(!open);
-  };
-
   const handleListItemClick = (
     event: React.MouseEvent<HTMLDivElement, MouseEvent>,
     index: number,
