@@ -10,7 +10,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Switch from '@mui/material/Switch';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { LI_MENU } from './HEADER_ENUM';
 import './Header.css';
@@ -30,9 +30,11 @@ export default function Header() {
   }, [ location ])
 
 
-  const [auth, setAuth] = React.useState(true);
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const [selectedIndex, setSelectedIndex] = React.useState(0);
+  const [auth, setAuth] = useState(true);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const [is_fold, setIsFold] = useState<boolean>(false)
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setAuth(event.target.checked);
@@ -72,6 +74,7 @@ export default function Header() {
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
+            onClick={() => setIsFold(!is_fold)}
           >
             <MenuIcon />
           </IconButton>
@@ -112,8 +115,10 @@ export default function Header() {
         </Toolbar>
       </AppBar>
 
+      <div className={`SNB ${is_fold ? "hide" : ""}`}>
+        <ListSnbMenu selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex}/>
 
-      <ListSnbMenu selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex}/>
+      </div>
     </Box>
   );
 }

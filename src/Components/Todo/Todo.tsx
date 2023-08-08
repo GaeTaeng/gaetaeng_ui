@@ -7,6 +7,7 @@ import { Props_todo_item } from './TodoType';
 
 import { useRecoilState } from 'recoil';
 import { TodoState } from '../../States/TodoState';
+import SkillStackList from '../SkillStackList';
 
 type Props = {
     width?: string | number;
@@ -22,6 +23,7 @@ function Todo ({width, height}: Props) {
 
     return(
     <div className="Todo"> 
+        <SkillStackList />
         <button onClick={handleReset}> 초기화 </button>
         <TodoListContents li_todo={li_todo} />
         <TodoInput/>
