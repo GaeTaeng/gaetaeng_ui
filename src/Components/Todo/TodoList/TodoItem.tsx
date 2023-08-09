@@ -39,13 +39,13 @@ function TodoItem({id,title, contents, deadline, is_complete} :Props_todo_item )
             <Typography sx={{ fontSize: 14, height: 21 }} color="text.secondary" gutterBottom>
                 할일
             </Typography>
-            <Typography sx={{ height: 30 }} variant="h5" component="div">
+            <Typography sx={{ height: 30, color: "#212121" }} variant="h5" component="div">
                 {title}
             </Typography>
             <Typography sx={{ height: 24, mb: 1.5 }} color="text.secondary">
                 {contents} 
             </Typography>
-            <Typography sx={{ height: 25 }} variant="body2">
+            <Typography sx={{ height: 25 , color: "#212121"}} variant="body2">
                {deadline && `~${dayjs(deadline).format("YYYY.MM.DD")}`}
             </Typography>
             </CardContent>

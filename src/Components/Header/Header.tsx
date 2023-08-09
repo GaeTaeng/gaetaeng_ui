@@ -66,7 +66,7 @@ export default function Header() {
           label={auth ? 'Logout' : 'Login'}
         />
       </FormGroup>
-      <AppBar position="static" sx={{backgroundColor : "RGB(0, 66, 0)"}}>
+      <AppBar position="static" sx={{backgroundColor : "#f4f7fa"/*"RGB(0, 66, 0)"*/}}>
         <Toolbar>
           <IconButton
             size="large"
@@ -78,8 +78,8 @@ export default function Header() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            {LI_MENU[selectedIndex].name}
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1, color:"#212121", fontSize:24, fontWeight:"bold" }}>
+            {/* {LI_MENU[selectedIndex].name} */}GAETAENG
           </Typography>
           <div>
             <IconButton

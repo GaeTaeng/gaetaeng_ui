@@ -1,19 +1,25 @@
 import React from 'react'
-
+import './Profile.css'
 
 export default function Profile() {
     return (
-        <div>
-            <h1>Profile</h1>
+        <div className='profile'>
+            {/* <h1>Profile</h1> */}
             <hr />
-            Who is GaeTaeng?
-            <hr />
+            <div className='white-background section right'>
+                Who is GaeTaeng?
+            </div>
+            <div className='dark-background section left'>
             My Skills
-            <hr />
+            </div>
+
+            <div className='white-background section right'>
             My Project
-            <hr />
+            </div>
+
+            <div className='dark-background section left'>
             Gym & BodyProfile
-            <hr />
+            </div>
 
 
         </div>

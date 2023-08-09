@@ -1,0 +1,25 @@
+.profile .section{
+    height: 200px;
+    font-size: x-large;
+    font-weight: bold;
+    padding: 30px;
+}
+
+.white-background {
+    /* background-color: aliceblue; */
+    background-color: rgb(154, 196, 255);
+    color: ghostwhite;
+}
+
+.dark-background {
+    background-color: ghostwhite;
+    /* color: aliceblue; */
+    color: rgb(154, 196, 255);
+}
+
+.section.right{
+    text-align: right;
+}
+.section.left{
+    text-align: left;
+}
