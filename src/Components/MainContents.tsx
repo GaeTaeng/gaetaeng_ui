@@ -13,15 +13,15 @@ function MainContents() {
       </header>
 
       <div className='App-contents'>
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static" sx={{backgroundColor : "#f4f7fa"/*"RGB(0, 66, 0)"*/}}>
-          <Toolbar>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1, color:"#212121", fontSize:24, fontWeight:"bold" }}>
+      {/* <Box sx={{ flexGrow: 1 }}> */}
+        {/* <AppBar position="static" sx={{backgroundColor : "#f4f7fa"}}> */}
+          {/* <Toolbar> */}
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1, color:"#212121", fontSize:24,  textAlign:"left", paddingRight:"30px"}}>
               메뉴명 TEST
             </Typography>
-          </Toolbar>
-        </AppBar>
-      </Box>
+          {/* </Toolbar> */}
+        {/* </AppBar> */}
+      {/* </Box> */}
 
         <AppRoutes />
 

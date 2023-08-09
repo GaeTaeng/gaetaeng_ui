@@ -65,7 +65,7 @@ export default function Header() {
           <IconButton
             size="large"
             edge="start"
-            color="inherit"
+            color="default"
             aria-label="menu"
             sx={{ mr: 2 }}
             onClick={() => setIsFold(!is_fold)}
@@ -82,7 +82,7 @@ export default function Header() {
             aria-controls="menu-appbar"
             aria-haspopup="true"
             onClick={handleMenu}
-            color="inherit"
+            color="default"
             >
             <AccountCircle />
             </IconButton>
