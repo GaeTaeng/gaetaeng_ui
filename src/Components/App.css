@@ -3,17 +3,19 @@
 }
 
 .App-header {
+  position: fixed;
+  top:0px;
+  width: 100%;
+
+  z-index: 1000;
 }
 .App-contents {
+  margin-top: 60px;
   background-color: white;
   /* top : 61px; */
-  left: 326px;
-  width: calc(100vw - 406px);
-  margin-top: 5px;
-  margin-left: 20px;
+  width: 80%;
   /* display: inline-block; */
-  position: absolute;
-  
+  display: flex;
 }
 
 

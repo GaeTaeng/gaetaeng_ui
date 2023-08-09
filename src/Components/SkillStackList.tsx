@@ -1,6 +1,5 @@
 
 import React from 'react';
-import './App.css';
 
 import mui_icon from '../Resource/mui_icon.png';
 import react_icon from '../Resource/react_icon.png';
@@ -24,7 +23,7 @@ function SkillStackList() {
     <div className="SkillStackList">
 
         
-    <Stack direction="row" spacing={5}
+    <Stack direction="row" spacing={5} sx={{margin:"30px 30px 0 30px"}}
             divider={<Divider orientation="vertical" flexItem />}>
             {
                 LI_ICON.map((item, idx) => {
