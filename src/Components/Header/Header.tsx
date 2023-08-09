@@ -55,12 +55,12 @@ export default function Header() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <FormGroup>
+      {/* <FormGroup>
       <Typography variant="h6" component="div" sx={{ flexGrow: 1, color:"#212121", fontSize:24, fontWeight:"bold", padding : "6px", textAlign:"left"}}>
-            {/* {LI_MENU[selectedIndex].name} */}GAETAENG
+            GAETAENG
           </Typography>
-      </FormGroup>
-      <AppBar position="static" sx={{backgroundColor : "#f4f7fa"/*"RGB(0, 66, 0)"*/}}>
+      </FormGroup> */}
+      <AppBar position="static" sx={{backgroundColor : "white"/*"RGB(0, 66, 0)"*/}}>
         <Toolbar>
           <IconButton
             size="large"
@@ -73,7 +73,7 @@ export default function Header() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, color:"#212121", fontSize:24, fontWeight:"bold" }}>
-            
+            GAETAENG
           </Typography>
           <div>
             <IconButton

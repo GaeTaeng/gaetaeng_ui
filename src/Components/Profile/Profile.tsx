@@ -4,7 +4,6 @@ import './Profile.css'
 export default function Profile() {
     return (
         <div className='profile'>
-            {/* <h1>Profile</h1> */}
             <hr />
             <div className='white-background section right'>
                 Who is GaeTaeng?
