@@ -14,7 +14,7 @@ function MainContents() {
       </header>
 
       <div className='App-contents'>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1, color:"#212121", fontSize:24,  paddingRight:"30px", borderBottom:"1px solid ghostwhite", width:"100%"}}>
+      <Typography variant="h6" component="div" sx={{flexGrow: 1, color:"#212121", fontSize:24,  paddingRight:"30px", borderBottom:"1px solid ghostwhite", width:"100%"}}>
           메뉴명 TEST
         </Typography>
         <AppRoutes />
