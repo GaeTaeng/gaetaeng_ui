@@ -16,6 +16,7 @@ import { LI_MENU } from './HEADER_ENUM';
 import './Header.css';
 import ListSnbMenu from './ListSnbMenu';
 import { useLocation } from 'react-router';
+import { FormLabel } from '@mui/material';
 export default function Header() {
 
   const location = useLocation();
@@ -55,16 +56,9 @@ export default function Header() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <FormGroup>
-        <FormControlLabel
-          control={
-            <Switch
-              checked={auth}
-              onChange={handleChange}
-              aria-label="login switch"
-            />
-          }
-          label={auth ? 'Logout' : 'Login'}
-        />
+      <Typography variant="h6" component="div" sx={{ flexGrow: 1, color:"#212121", fontSize:24, fontWeight:"bold", padding : "6px", textAlign:"left"}}>
+            {/* {LI_MENU[selectedIndex].name} */}GAETAENG
+          </Typography>
       </FormGroup>
       <AppBar position="static" sx={{backgroundColor : "#f4f7fa"/*"RGB(0, 66, 0)"*/}}>
         <Toolbar>
@@ -79,7 +73,7 @@ export default function Header() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, color:"#212121", fontSize:24, fontWeight:"bold" }}>
-            {/* {LI_MENU[selectedIndex].name} */}GAETAENG
+            
           </Typography>
           <div>
             <IconButton
