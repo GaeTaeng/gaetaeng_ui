@@ -35,3 +35,16 @@
 hr {
   border-color: ghostwhite;
 }
+
+
+:root {
+  --summer-blue : rgb(154, 196, 255);
+
+
+
+  --profile-color-text : var(--summer-blue);
+  --profile-color-box : var(--summer-blue);
+  
+  --profile-white-text : ghostwhite;
+  --profile-white-box : ghostwhite;
+}

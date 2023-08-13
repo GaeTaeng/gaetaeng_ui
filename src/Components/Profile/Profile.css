@@ -1,26 +1,33 @@
+
+.profile {
+    width : 750px;
+}
+
 .profile .section{
-    width: 100%;
+    width: 310px;
     height: 200px;
     font-size: x-large;
     font-weight: bold;
     padding: 30px;
+
+    display: inline-block;
 }
 
 .white-background {
     /* background-color: aliceblue; */
-    background-color: rgb(154, 196, 255);
-    color: ghostwhite;
+    background-color: var(--profile-color-box);
+    color: var(--profile-white-text);
 }
 
 .dark-background {
-    background-color: ghostwhite;
+    background-color: var(--profile-white-box);
     /* color: aliceblue; */
-    color: rgb(154, 196, 255);
+    color: var(--profile-color-text);
 }
 
-.section.right{
+.section.text-right{
     text-align: right;
 }
-.section.left{
+.section.text-left{
     text-align: left;
 }
