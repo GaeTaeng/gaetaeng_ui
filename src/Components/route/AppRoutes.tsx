@@ -8,14 +8,9 @@ function AppRoutes() {
 
     return (
         <Routes>
-            <Route path="/">
-                <Route path="profile" element={<Profile />} />
-                <Route path="todo" element={<Todo />} />
-                <Route
-                    path="*"
-                    element={<Navigate to="/profile" replace />}
-                />
-            </Route>
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/todo" element={<Todo />} />
+        <Route path="/" element={<Navigate replace to="/profile" />} />
         </Routes>
     )
 }
