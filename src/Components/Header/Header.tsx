@@ -13,6 +13,8 @@ import { useLocation } from 'react-router';
 import './Header.css';
 import { LI_MENU } from './HEADER_ENUM';
 import ListSnbMenu from './ListSnbMenu';
+import { useRecoilState } from 'recoil';
+import { HeaderSnbState } from '../../States/MainState';
 export default function Header() {
 
   const location = useLocation();
@@ -31,7 +33,8 @@ export default function Header() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const [is_fold, setIsFold] = useState<boolean>(false)
+  
+  const [isFoldSnb, setIsFoldSnb] = useRecoilState<boolean>(HeaderSnbState);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setAuth(event.target.checked);
@@ -64,7 +67,7 @@ export default function Header() {
             color="default"
             aria-label="menu"
             sx={{ mr: 2 }}
-            onClick={() => setIsFold(!is_fold)}
+            onClick={() => setIsFoldSnb(!isFoldSnb)}
           >
             <MenuIcon />
           </IconButton>
@@ -105,7 +108,7 @@ export default function Header() {
         </Toolbar>
       </AppBar>
 
-      <div className={`SNB ${is_fold ? "hide" : ""}`}>
+      <div className={`SNB ${isFoldSnb ? "hide" : ""}`}>
         <ListSnbMenu selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex}/>
 
       </div>

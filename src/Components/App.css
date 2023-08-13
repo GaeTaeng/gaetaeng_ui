@@ -11,6 +11,15 @@
   z-index: 1000;
 }
 .App-contents {
+
+  margin-left : 320px;
+}
+
+.App-contents.fold {
+  margin-left : 0px;
+}
+
+.Main-Contents {
   margin-top: 60px;
   background-color: white;
   /* top : 61px; */
@@ -20,8 +29,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
 
+}
 
 hr {
   border-color: ghostwhite;
